@@ -1,3 +1,4 @@
+{% if site.masthead %}
 <nav id="global-masthead">
 
 	<div class="wrapper clearfix">
@@ -23,11 +24,11 @@
 		</div>
 
 		<ul id="audiences" class="m-clear">
-			<li><a href="index.php">UCL Home</a></li>
-			<li><a href="prospective-students.php">Prospective students</a></li>
-			<li><a href="current-students.php">Current students</a></li>
-			<li><a href="staff.php">Staff</a></li>
+			{% for item in site.masthead %}
+			<li><a href="{{item.link}}">{{item.text}}</a></li>
+			{% endfor %}
 		</ul>
 	</div>
 
 </nav>
+{% endif %}

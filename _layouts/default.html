@@ -3,15 +3,15 @@
 <head>
 <meta charset=utf-8 />
 <meta name="author" content="UCL" />
-<meta name="description" content="UCL Homepage" />
+<meta name="description" content="{{page.title}}" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 {% include social.html %}
 
-<title>UCL Design Language</title>
+<title>{{page.title}}</title>
 
 <link href="/css/screen.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
-
+<link href="/css/yoursite.css" media="screen, projection" rel="stylesheet" type="text/css" />
 <!--[if IE]><link href="/css/ie.min.css" rel="stylesheet" /><![endif]-->
 <!--[if lt IE 8]><link href="/css/ie-old.min.css" rel="stylesheet" /><![endif]-->
 
@@ -27,7 +27,7 @@
 
 <body id="index">
 
-	{% include navigation %}
+	{% include navigation.html %}
 
 		<div id="site-content" class="wrapper">
 
@@ -41,7 +41,7 @@
 
 				<div id="content">
 
-					{% breadcrumb %}
+					{% include breadcrumb.html %}
 
 					<!-- start main slot where silva content gets rendered-->
 
@@ -49,25 +49,27 @@
 
 						<article>
 
-								<h1>Main page title</h1>
+								<h1>{{page.title}}</h1>
 
 							{{content}}
 
 
 							</article>
 
-						<p class="mod">Page last modified on <span class="lastMod">06&nbsp;aug&nbsp;13&nbsp;08:09</span>
+						<p class="mod">Page last modified on <span class="lastMod">{{ 'now' | date: "%d %h %y %H:%M" }}</span>
 						</p>
 
 					</div>
 
+					{% if page.sidebar %}
 					<div class="content-sidebar">
 
-						<h1>Sidebar</h1>
+						<h1>{{ page.sidebar.title }}</h1>
 
-						<p>Supporting content, patterns or related links can be placed in the sidebar</p>
+						<p>{{ page.sidebar.text }}</p>
 
 					</div>
+					{% endif %}
 
 					<!-- end main slot where silva content gets rendered-->
 
@@ -79,7 +81,7 @@
 
 		</div><!-- end #site-content -->
 
-		{% include footer.html }
+		{% include footer.html %}
 
 </body>
 </html>
