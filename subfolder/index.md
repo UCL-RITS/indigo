@@ -1,7 +1,7 @@
 ---
 crumbs: 
-  content: [{link: research-it-services, text: RITS}]
-title: An Example Page
+  content: [{link: research-it-services, text: RITS},{link: research-it-services, text: RITS}]
+title: Another page
 findfast:
   title: Quick Links in page
   links:
@@ -9,4 +9,4 @@ findfast:
     text: training 2
 ---
 
-Some content
+Some more content

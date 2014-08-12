@@ -1,4 +1,4 @@
-{% if site.masthead %}
+{% if masthead is defined %}
 <nav id="global-masthead">
 
 	<div class="wrapper clearfix">
@@ -24,7 +24,7 @@
 		</div>
 
 		<ul id="audiences" class="m-clear">
-			{% for item in site.masthead %}
+			{% for item in masthead %}
 			<li><a href="{{item.link}}">{{item.text}}</a></li>
 			{% endfor %}
 		</ul>

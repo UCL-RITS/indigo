@@ -3,12 +3,12 @@
 <head>
 <meta charset=utf-8 />
 <meta name="author" content="UCL" />
-<meta name="description" content="{{page.title}}" />
+<meta name="description" content="{{d.title}}" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-{% include social.html %}
+{% include '_includes/social.html' %}
 
-<title>{{page.title}}</title>
+<title>{{title}}</title>
 
 <link href="/css/screen.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
 <link href="/css/yoursite.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -21,13 +21,22 @@
 <meta name="msapplication-TileColor" content="#000000">
 <meta name="msapplication-TileImage" content="favicon-144.png">
 
-{% include scripts.html %}
+{% include '_includes/scripts.html' %}
+
+{% set crumbs = [{'link': 'isd', 'text': 'ISD'}] %}
+{% set contact = 'http://www.ucl.ac.uk/research-it-services/partner-with-us' %}
+{% set sitetitle = 'Example Indigo with Dexy' %}
+{% set includeleftnav = True %}
+{% set masthead = [{'link': 'http://www.ucl.ac.uk', 'text': "UCL"}] %}
+{% set leftnav= [{'link': 'http://www.ucl.ac.uk', 'text': "UCL"}] %}
+{% set findfast = {'title': "Quick Links 1", 'links': [{'link': 'http://development.rc.ucl.ac.uk/training', 'text': "training"}]} %}
+{% set myucl = {'title': "Quick Links 2", 'links': [{'link': 'http://development.rc.ucl.ac.uk/training', 'text': "training"}]} %}
 
 </head>
 
 <body id="index">
 
-	{% include navigation.html %}
+	{% include '_includes/navigation.html' %}
 
 		<div id="site-content" class="wrapper">
 
@@ -41,7 +50,7 @@
 
 				<div id="content">
 
-					{% include breadcrumb.html %}
+					{%include '_includes/breadcrumb.html' %}
 
 					<!-- start main slot where silva content gets rendered-->
 
@@ -49,24 +58,24 @@
 
 						<article>
 
-								<h1>{{page.title}}</h1>
+								<h1>{{title}}</h1>
 
 							{{content}}
 
 
 							</article>
 
-						<p class="mod">Page last modified on <span class="lastMod">{{ 'now' | date: "%d %h %y %H:%M" }}</span>
+						<p class="mod">Page last modified on <span class="lastMod">{{ today }}</span>
 						</p>
 
 					</div>
 
-					{% if page.sidebar %}
+					{% if d.sidebar is defined %}
 					<div class="content-sidebar">
 
-						<h1>{{ page.sidebar.title }}</h1>
+						<h1>{{ d.sidebar.title }}</h1>
 
-						<p>{{ page.sidebar.text }}</p>
+						<p>{{ d.sidebar.text }}</p>
 
 					</div>
 					{% endif %}
@@ -81,7 +90,7 @@
 
 		</div><!-- end #site-content -->
 
-		{% include footer.html %}
+		{% include '_includes/footer.html' %}
 
 </body>
 </html>

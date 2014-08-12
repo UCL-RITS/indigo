@@ -1,16 +1,18 @@
-{% if site.includeleftnav%}
+{% if includeleftnav%}
 <div id="leftcol">
 <nav class="leftnav">
 
 	<ul>
 
-		<li><a href="http://ucl.ac.uk" class="home-link">UCL</a></li>
-		{% for place in site.leftnav %}
+		{% for place in leftnav %}
 			<li><a href="{{place.link}}">{{place.text}}</a></li>
 		{% endfor %}
-		{% for page in site.pages %}
-			{% if page.showinmenu %}
-			<li><a href="{{page.url}}">{{page.short}}</a></li>
+		{% for folder in root.children recursive %}
+			{% if folder.index_page %}
+			<li><a href="{{folder.location | e}}">{{folder.index_page.title()}}</a></li>
+			{% endif %}
+			{% if folder.has_children_with_index_pages() %}
+				{{ loop(folder.children) }}
 			{% endif %}
 		{% endfor %}
 

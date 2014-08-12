@@ -1,0 +1,13 @@
+assets:
+ - .css
+ - .js
+ - .png
+ - .gif
+ - .svg
+ - .jpg
+ - .ico
+ - .scss
+
+content:
+ - .md|yamlargs|jinja|pandoc|h:
+    - assets

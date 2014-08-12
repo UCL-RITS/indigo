@@ -2,18 +2,16 @@
 <nav id="breadcrumb" class="clearfix">
 	<ul>
   		<li><a href="http://www.ucl.ac.uk/">UCL</a></li>
-  		{% if site.crumbs %}
-			{% for crumb in site.crumbs %}
-			<li><a href="http://www.ucl.ac.uk/{{crumb.link}}">{{crumb.text}}</a></li>
+  		{% if crumbs is defined %}
+			{% for crumb in crumbs %}
+			<li><a href="{{crumb.link}}">{{crumb.text}}</a></li>
 			{% endfor %}
 		{% endif %}
-  		{% if page.crumbs %}
-			{% for crumb in page.crumbs %}
-			<li><a href="http://www.ucl.ac.uk/{{crumb.link}}">{{crumb.text}}</a></li>
+		{% if d.crumbs is defined %}
+			{% for crumb in d.crumbs[1].content %}
+			<li><a href="{{crumb.link}}">{{crumb.text}}</a></li>
 			{% endfor %}
 		{% endif %}
-		{% if page.short %}
-			<li><a href="page.url">{{page.short}}</a></li>
-		{% endif %}
+		<li>{{title}}</li>
  	</ul>
 </nav>
