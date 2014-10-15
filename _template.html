@@ -6,31 +6,32 @@
 <meta name="description" content="{{d.title}}" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
+{% set includeleftnav = True %}
+{% set leftnav = [] %}
+{% set crumbs = [{'link': 'http://ucl.ac.uk/isd', 'text': 'ISD'},
+				 {'link': 'http://www.ucl.ac.uk/isd/staff/research_services/', 'text': 'RITS'},
+				 {'link': 'http://development.rc.ucl.ac.uk/training', 'text': 'Training'}
+				] %}
+{% set contact = 'http://www.ucl.ac.uk/research-it-services/partner-with-us' %}
+{% set sitetitle = 'High Performance and High Throughput Computing With Legion' %}
+{% set siteroot = '/training/hptclegion/' %}
 {% include '_includes/social.html' %}
+{% include '_includes/scripts.html' %}
 
 <title>{{title}}</title>
 
-<link href="/css/screen.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
-<link href="/css/yoursite.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="{{siteroot}}/css/screen.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="{{siteroot}}/css/highlight.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="{{siteroot}}/css/yoursite.css" media="screen, projection" rel="stylesheet" type="text/css" />
 <!--[if IE]><link href="/css/ie.min.css" rel="stylesheet" /><![endif]-->
 <!--[if lt IE 8]><link href="/css/ie-old.min.css" rel="stylesheet" /><![endif]-->
 
 
-<link rel="shortcut icon" href="/images/favicon.ico" />
+<link rel="shortcut icon" href="{{siteroot}}/images/favicon.ico" />
 <link rel="apple-touch-icon-precomposed" href="favicon-152.png">
 <meta name="msapplication-TileColor" content="#000000">
 <meta name="msapplication-TileImage" content="favicon-144.png">
-
-{% include '_includes/scripts.html' %}
-
-{% set crumbs = [{'link': 'isd', 'text': 'ISD'}] %}
-{% set contact = 'http://www.ucl.ac.uk/research-it-services/partner-with-us' %}
-{% set sitetitle = 'Example Indigo with Dexy' %}
-{% set includeleftnav = True %}
-{% set masthead = [{'link': 'http://www.ucl.ac.uk', 'text': "UCL"}] %}
-{% set leftnav= [{'link': 'http://www.ucl.ac.uk', 'text': "UCL"}] %}
-{% set findfast = {'title': "Quick Links 1", 'links': [{'link': 'http://development.rc.ucl.ac.uk/training', 'text': "training"}]} %}
-{% set myucl = {'title': "Quick Links 2", 'links': [{'link': 'http://development.rc.ucl.ac.uk/training', 'text': "training"}]} %}
 
 </head>
 
@@ -42,7 +43,7 @@
 
 			<header id="header-mobile" class="default-header">
 
-				<a id="nav-mobile-menu" href="#"><img src="./images/mob-nav.png" alt="Menu" /></a>
+				<a id="nav-mobile-menu" href="#"><img src="/images/mob-nav.png" alt="Menu" /></a>
 
 			</header>
 
@@ -58,10 +59,7 @@
 
 						<article>
 
-								<h1>{{title}}</h1>
-
 							{{content}}
-
 
 							</article>
 
