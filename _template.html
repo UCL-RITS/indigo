@@ -6,16 +6,15 @@
 <meta name="description" content="{{d.title}}" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
-{% set includeleftnav = True %}
-{% set leftnav = [] %}
-{% set crumbs = [{'link': 'http://ucl.ac.uk/isd', 'text': 'ISD'},
-				 {'link': 'http://www.ucl.ac.uk/isd/staff/research_services/', 'text': 'RITS'},
-				 {'link': 'http://development.rc.ucl.ac.uk/training', 'text': 'Training'}
-				] %}
-{% set contact = 'http://www.ucl.ac.uk/research-it-services/partner-with-us' %}
-{% set sitetitle = 'High Performance and High Throughput Computing With Legion' %}
-{% set siteroot = '/training/hptclegion/' %}
+{% set page_findfast = s.settings_and_attributes().get('findfast', False) %}
+{% set findfast = reporter_settings.get('findfast', False) %}
+{% set myucl = reporter_settings.get('myucl', False) %}
+{% set includeleftnav = reporter_settings.get('include_leftnav', False)  %}
+{% set leftnav = reporter_settings.get('leftnav', '') %}
+{% set crumbs = reporter_settings.get('crumbs', '') %}
+{% set contact = reporter_settings.get('contact', 'http://www.ucl.ac.uk/research-it-services/partner-with-us') %}
+{% set sitetitle = reporter_settings.get('site_title', '') %}
+{% set siteroot = reporter_settings.get('root', '') %}
 {% include '_includes/social.html' %}
 {% include '_includes/scripts.html' %}
 

@@ -7,7 +7,3 @@ assets:
  - .jpg
  - .ico
  - .scss
-
-content:
- - .md|yamlargs|jinja|pandoc|h:
-    - assets

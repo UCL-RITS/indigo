@@ -1,34 +1,34 @@
 
 <footer class="wrapper clearfix">
 
-	{% if myucl is defined %}
+	{% if myucl %}
 		<article class="block-myucl">
-			<h2>{{myucl.title}}</h2>
+      <h2>Also in UCL</h2>
 			<ul>
-			{% for item in myucl.links %}
-			<li><a href="{{item.link}}">{{item.text}}</a></li>
+			{% for item in myucl %}
+			<li><a href="{{item[1]}}">{{item[0]}}</a></li>
 			{% endfor %}
 			</ul>
 		</article>
 	{% endif %}
 
-	{% if findfast is defined %}
+	{% if findfast %}
 	<article class="block-finditfast1">
-		<h2>{{findfast.title }}</h2>
+		<h2>Quick Links</h2>
 		<ul>
-			{% for fast in findfast.links %}
-			<li><a href="{{fast.link}}">{{fast.text}}</a></li>
+			{% for fast in findfast %}
+			<li><a href="{{fast[1]}}">{{fast[0]}}</a></li>
 			{% endfor %}
 		</ul>
 	</article>
 	{% endif %}
 
-	{% if d.findfast is defined %}
+	{% if page_findfast %}
 	<article class="block-finditfast2">
-		<h2>{{d.findfast[1].title}}</h2>
+		<h2>Page Quick Links</h2>
 		<ul>
-			{% for fast in d.findfast[1].links %}
-			<li><a href="{{fast.link}}">{{fast.text}}</a></li>
+			{% for fast in page_findfast %}
+			<li><a href="{{fast[1]}}">{{fast[0]}}</a></li>
 			{% endfor %}
 		</ul>
 

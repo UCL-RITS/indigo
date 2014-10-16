@@ -4,7 +4,7 @@
   		<li><a href="http://www.ucl.ac.uk/">UCL</a></li>
   		{% if crumbs is defined %}
 			{% for crumb in crumbs %}
-			<li><a href="{{crumb.link}}">{{crumb.text}}</a></li>
+			<li><a href="{{crumb[1]}}">{{crumb[0]}}</a></li>
 			{% endfor %}
 		{% endif %}
 		{% for ancestor in nav.ancestors %}
