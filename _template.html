@@ -10,24 +10,24 @@
 {% set findfast = reporter_settings.get('findfast', False) %}
 {% set myucl = reporter_settings.get('myucl', False) %}
 {% set includeleftnav = reporter_settings.get('include_leftnav', False)  %}
-{% set leftnav = reporter_settings.get('leftnav', '') %}
-{% set crumbs = reporter_settings.get('crumbs', '') %}
+{% set leftnav = reporter_settings.get('leftnav', []) %}
+{% set crumbs = reporter_settings.get('crumbs', []) %}
 {% set contact = reporter_settings.get('contact', 'http://www.ucl.ac.uk/research-it-services/partner-with-us') %}
 {% set sitetitle = reporter_settings.get('site_title', '') %}
-{% set siteroot = reporter_settings.get('root', '') %}
 {% include '_includes/social.html' %}
 {% include '_includes/scripts.html' %}
 
 <title>{{title}}</title>
 
-<link href="{{siteroot}}/css/screen.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
-<link href="{{siteroot}}/css/highlight.css" media="screen, projection" rel="stylesheet" type="text/css" />
-<link href="{{siteroot}}/css/yoursite.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="{{root}}/css/screen.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="{{root}}/css/highlight.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="{{root}}/css/yoursite.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="{{root}}/css/instance.css" media="screen, projection" rel="stylesheet" type="text/css" />
 <!--[if IE]><link href="/css/ie.min.css" rel="stylesheet" /><![endif]-->
 <!--[if lt IE 8]><link href="/css/ie-old.min.css" rel="stylesheet" /><![endif]-->
 
 
-<link rel="shortcut icon" href="{{siteroot}}/images/favicon.ico" />
+<link rel="shortcut icon" href="{{root}}/images/favicon.ico" />
 <link rel="apple-touch-icon-precomposed" href="favicon-152.png">
 <meta name="msapplication-TileColor" content="#000000">
 <meta name="msapplication-TileImage" content="favicon-144.png">

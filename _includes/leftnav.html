@@ -7,7 +7,7 @@
 		{% endfor %}
 		{% for folder in sorted(navtree.root.children, key=attrgetter('location')) %}
 			{% if folder.index_page %}
-			<li><a href="{{siteroot}}{{folder.location | e}}">{{folder.index_page.title()}}</a></li>
+			<li><a href="{{root}}{{folder.location | e}}">{{folder.index_page.title()}}</a></li>
 			{% endif %}
 			{% if folder.has_children_with_index_pages() %}
 				{{ loop(folder.children) }}
@@ -16,7 +16,7 @@
 			<ul>
 			{% for doc in sorted(folder.docs, key=attrgetter('name')) %}
 				{% if doc != folder.index_page and 'reveal' not in doc.output_name() and doc.ext == ".html" %}
-					<li><a href="{{siteroot}}/{{doc.name}}">{{doc.title()}}</a></li>
+					<li><a href="{{root}}/{{doc.name}}">{{doc.title()}}</a></li>
 				{% endif %}
 			{% endfor %}
 			</ul>
