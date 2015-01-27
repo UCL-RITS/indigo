@@ -7,4 +7,23 @@
 .leftnav ul ul {
 	margin-left: 10px;
 }
+pre {
+    padding: 0.5em;
+    margin: 1em;
+}
 
+pre code {
+    color: inherit;
+    background-color: inherit;
+}
+
+code {
+    padding: 0.25em;
+    color: black;
+    background-color: #dfdfdf;
+}
+
+blockquote  p  code {
+    color: #777;
+    font-style: italic;
+}
