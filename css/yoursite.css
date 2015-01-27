@@ -23,7 +23,7 @@ code {
     background-color: #dfdfdf;
 }
 
-blockquote  p  code {
+blockquote code {
     color: #777;
     font-style: italic;
 }
