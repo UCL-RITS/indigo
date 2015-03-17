@@ -3,6 +3,7 @@
 }
 .content-main {
 	width: 100%;
+  min-height: 700px;
 }
 .leftnav ul ul {
 	margin-left: 10px;
